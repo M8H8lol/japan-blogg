@@ -7,23 +7,30 @@ export default async function handler(req, res) {
 			const db = await connectToDatabase();
 			const blogsDB = db.collection("blogs");
 			const blogs = await blogsDB.find({}).toArray();
-			let blogImgs = [];
+			let imgArray = [];
 			blogs.forEach((blog) => {
 				blog.content.forEach((element) => {
 					if (
 						element.type === "img" &&
-						!blogImgs.find((img) => img.path === element.path)
+						!imgArray.find((img) => img.path === element.path)
 					) {
-						blogImgs.push(element);
+						imgArray.push(element);
 					}
 				});
 			});
 
 			const miscImgs = getImages();
+			miscImgs.forEach((element) => {
+				// this will not find duplicates from miscImgs
+				if (!imgArray.find((img) => img.path === element))
+				{
+					imgArray.push(element);
+				}
+			})
 			
-            const allImg = Array.prototype.concat(blogImgs, miscImgs);
             
-            res.status(200).send(allImg);
+            
+            res.status(200).send(imgArray);
 		} else {
 			res.status(501).send("only GET method is allowed");
 		}
