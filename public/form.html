@@ -1,48 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./js/form.js" defer></script>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="./js/form.js" defer></script>
-  <link rel="stylesheet" href="./css/formStyle.css">
+    <title>Japan Blogg Formulär</title>
+  </head>
+  <body>
+    <h1>Här är formuläret</h1>
+    <form id="form">
+      <label for="blog-name">
+        <h3>Title:</h3>
+        <input type="text" class="blog-name" id="title" />
+      </label>
 
-  <title>Japan Blogg Formulär</title>
-</head>
-
-<body>
-  <h1>Fill in this form</h1>
-  <form id="form">
-    <label for="blog-name">
-      <h3>Title:</h3>
-      <input type="text" class="blog-name" id="title" required/>
-    </label>
-
-    <label for="blog-author">
-      <h3>Author:</h3>
-      <input type="text" class="blog-author" id="author" required/>
-    </label>
+      <label for="blog-author">
+        <h3>Author:</h3>
+        <input type="text" class="blog-author" id="author" />
+      </label>
 
     <label for="date-input">
-      <h3>Date:</h3>
-      <input type="date" required/>
+      <h3>Datum för händelsen:</h3>
+      <input type="date" />
     </label>
 
     <label for="location-input">
-      <h3>Location:</h3>
-      <input type="text" id="location" required/>
+      <h3>Plats för händelsen:</h3>
+      <input type="text" id="location" />
     </label>
 
     <div id="blog-content-container">
       <div class="paragraf-container">
         <label for="paragraf-title">
-          <h3>Paragraph Title:</h3>
-          <input type="text" class="paragraf-title" required/>
+          <h3>Paragraf title:</h3>
+          <input type="text" class="paragraf-title" />
         </label>
         <label for="paragraf-text">
-          <h3>Paragraph:</h3>
-          <textarea class="paragraf-text" cols="30" rows="10" required></textarea>
+          <h3>Paragraf:</h3>
+          <textarea class="paragraf-text" cols="30" rows="10"></textarea>
         </label>
         <button class="RMElementButton" type="button" onclick="removeElement(event)">
           Remove Element
@@ -69,7 +66,7 @@
 
     <label for="password-input" id="password-container">
       <h3>Password:</h3>
-      <input type="password" id="password-input" required/>
+      <input type="password" id="password-input" />
     </label>
 
     <label for="submit">
